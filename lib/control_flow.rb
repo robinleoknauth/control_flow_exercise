@@ -76,9 +76,9 @@ def fizzbuzz(n)
   (1..n).to_a.map do |el|
     if el % 15 == 0
       "fizzbuzz"
-    elsif el % 3 == 0 && el % 5 != 0
+    elsif el % 3 == 0
       "fizz"
-    elsif el % 5 == 0 && el % 3 != 0
+    elsif el % 5 == 0
       "buzz"
     else
       el
@@ -99,7 +99,7 @@ end
 # prime.
 def prime?(num)
   return false if num == 1
-  (2..num/2).each do |i|
+  (2..num / 2).each do |i|
     return false if num % i == 0
   end
   true
@@ -131,8 +131,8 @@ end
 # opposite parity, e.g. oddball([1,2,3]) => 2, oddball([2,4,5,6] => 5)
 def oddball(arr)
   if arr.count { |i| i.even? } == 1
-    return arr.select { |i| i.even? }[0]
+    arr.select { |i| i.even? }[0]
   else
-    return arr.select { |i| i.odd? }[0]
+    arr.select { |i| i.odd? }[0]
   end
 end

@@ -130,9 +130,9 @@ end
 # Return the one integer in an array that is even or odd while the rest are of
 # opposite parity, e.g. oddball([1,2,3]) => 2, oddball([2,4,5,6] => 5)
 def oddball(arr)
-  if arr.count { |i| i.even? } == 1
-    arr.select { |i| i.even? }[0]
+  if arr.count(&:even?) == 1
+    arr.select(&:even?)[0]
   else
-    arr.select { |i| i.odd? }[0]
+    arr.select(&:odd?)[0]
   end
 end
